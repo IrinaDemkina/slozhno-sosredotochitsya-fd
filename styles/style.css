@@ -1,5 +1,435 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. 
+Ниже в этом же файле вы напишете медиавыражения для адаптива под разные экраны.*/
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap:40px;
+  font-family: var(--fonts, monospace);
+  font-size: var(--font-size);
+  font-weight:700;
+  line-height: 23.4px;
+  color: var(--text-color);
+  background-color:var(--background-color);
+}
+
+.header {
+  background-image: var(--background-image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: grid;
+  position: relative;
+  height: 100vh;
+  min-height: 668px;
+  width: 100%;
+  padding: 10px;
+  grid-template-rows: 1fr min-content 1fr;
+}
+
+/*rec*/
+.decorative-element{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  color: var(--decorative-element-color);
+  font-weight: 400;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  gap: 10px;
+  text-align: center;
+  padding-right: 8px;
+  margin: 10px;
+}
+
+.decorative-element::after {
+  display: block;
+  content: "";
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 50%;
+  background-color: var(--decorative-element-color);
+  box-shadow: 0 0 4px 3px var(--decorative-element-color);
+}
+
+/*уголки*/
+.decorated-zone::before {
+  border-top: 1px solid var(--decorative-element-color);
+  border-right: 1px solid var(--decorative-element-color);
+  content: "";
+  position: absolute;
+  display: inline-block;
+  block-size: 25px;
+  inline-size: 25px;
+  top: 0;
+  right: 0;
+  margin: 10px;
+}
+
+.decorated-zone::after {
+  border-bottom: 1px solid var(--decorative-element-color);
+  border-left: 1px solid var(--decorative-element-color);
+  content: "";
+  position: absolute;
+  display: inline-block;
+  block-size: 25px;
+  inline-size: 25px;
+  bottom: 0;
+  left: 0;
+  margin: 10px;
+}
+
+.header__theme-menu {
+  justify-self: end;
+  align-self:center;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.header__theme-menu-button{
+  color: var(--nav-color);
+  text-transform: lowercase;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: center;
+  padding: 3px 13px;
+  background: transparent;
+  border: 1px solid transparent;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--second-color);
+  outline: none;
+}
+
+.header__theme-menu-button:focus {
+  border: none;
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  border-bottom: 1px solid currentColor;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid currentColor;
+  pointer-events: none;
+}
+
+.title {
+  font-size:clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem); /* Для мобильных */
+  line-height: 83%;
+  color: var(--title-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  align-self: center;
+}
+
+.title-decor {
+  background-color: var(--background-color-text);
+  color: var(--accent-text-color);
+  font-size: 18px;
+  height: auto;
+  align-self: center;
+  justify-self: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.question-section {
+  padding: 0px 10px;
+  display: grid;
+  gap: 20px;
+}
+
+.question-section .question-section-title{
+  color: var(--question-section-title);
+  background: transparent;
+}
+
+.question-section-answer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.question-section-answer-title {
+  width: 100%;
+}
+
+.question-section-answer-text {
+  display: inline-block;
+  font-weight:400;
+}
+
+.question-section-answer:hover {
+  cursor: pointer;
+  text-decoration:underline;
+  text-decoration-color: currentColor;
+}
+
+.question-section-answer-link {
+  text-decoration: none;
+  text-shadow: 2px 1px 0 var(--accent-color);
+}
+
+.question-section-answer-link:focus-visible {
+  border: 1px solid var(--second-color);
+  outline: none;
+}
+
+
+.question-section:focus-visible {
+  outline: none;
+  border: 10px solid currentColor;
+}
+
+.question-section-answer-link:hover {
+  border: none;
+  outline: none;
+}
+
+.normal-title {
+  font-weight: 400;
+}
+
+.question-section-pictures {
+  padding: 0px 10px;
+  display: grid;
+  gap: 10px;
+}
+
+.question-section-answer-pictures {
+  display: grid;
+  gap: 10px;
+}
+
+.picture {
+  inline-size: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.footer {
+  display: grid;
+  position: relative;
+  height: 100vh;
+  min-height: 668px;
+  width: 100%;
+  padding-left: 14px;
+  text-align: center;
+}
+
+.footer-title {
+  font-size:clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem); /* Для мобильных */
+  line-height: 83%;
+  color: var(--title-color);
+  align-self: center;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.page > :last-child {
+  margin-bottom: 0px;
+}
+
+.question-section-answer-link:hover {
+  border-block-end: 1px solid var(--solid);
+}
+
+@media (width >= 768px) {
+
+  .page {
+    gap:60px;
+  }
+
+  .main {
+    gap:80px;
+  }
+
+  .header {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr min-content 1fr;
+  }
+
+  .header__theme-menu {
+    grid-column: 2;
+  }
+
+  .title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    margin-left: -20px;
+    grid-column: 1/-1;
+  }
+
+  .title-decor{
+    grid-column: 2;
+  }
+  
+  .decorative-element {
+    margin: 20px;
+  }
+
+  .decorated-zone::before {
+    margin: 20px;
+  }
+
+  .decorated-zone::after {
+    margin: 20px;
+  }
+
+  .question-section {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto 1fr;
+    padding: 0px 20px;
+  }
+  .row-section .question-section-title {
+    grid-column: 1;
+    grid-row: 1/-1;
+    align-self: start;
+  }
+
+  .row-section .question-section-answer {
+    grid-column: 2;
+  }
+
+  .column-section .question-section-title {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+  }
+
+  .column-section .question-section-answer {
+    grid-column: 1/3;
+  }
+
+  .question-section-pictures {
+    gap: 20px;
+    padding: 0px 20px;
+  }
+
+  .question-section-answer-pictures {
+    gap: 20px;
+  }
+
+  .pictures-section {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    gap: 20px;
+  }
+
+  .picture-title {
+    grid-column: 1/-1;
+  }
+
+  .picture-sunset {
+    grid-column: 1/3;
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .picture-ice-cream {
+    grid-column: 3;
+    grid-row: 1/3;
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .picture-tape {
+    grid-column: 1;
+    grid-row: 2/4;
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .picture-books {
+    grid-column: 2;
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .picture-street {
+    grid-column: 2/4;
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .footer {
+    text-align: center;
+  }
+
+  .footer-title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+
+@media (width >= 1024px) {
+
+  .header__theme-menu {
+    grid-column: 1/-1;
+    align-self: start;
+    justify-self: center;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .question-section {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    padding: 0px 20px;
+  }
+
+  .row-section .question-section-title {
+    grid-column: 1;
+    grid-row: 1/-1;
+    align-self: start;
+  }
+
+  .row-section .question-section-answer {
+    grid-column: 2/4;
+  }
+
+  .column-section .question-section-title {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+  }
+
+  .column-section .question-section-answer {
+    grid-row: 2/3;
+    grid-column: auto;
+  }
+
+  .footer-title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
 }

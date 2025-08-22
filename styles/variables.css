@@ -2,3 +2,19 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+:root {
+  --background-image: url(../images/cover-image-dark.png);
+  --background-color: rgba(0, 0, 40);
+  --accent-color:rgba(255, 0, 112);/*тень*/
+  --fonts: "IBM Plex Mono";
+  --font-size: 18px;
+  --text-color:rgba(241, 178, 206);
+  --decorative-element-color: rgba(255, 0, 112);
+  --nav-color: rgba(255, 0, 112);
+  --background-color-text:  rgba(255, 0, 112);
+  --title-color:rgba(219, 0, 255);
+  --accent-text-color: rgba(0, 0, 40);
+  --question-section-title: rgba(255, 0, 112);
+  --solid:rgba(241, 178, 206);
+  --second-color:rgba(255, 0, 112, 0.4);
+}
