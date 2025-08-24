@@ -42,5 +42,12 @@
   --solid:rgba(53, 52, 48);
   --second-color:rgba(50, 49, 45, 0.4);
   }
+  
+  .decorative-element {
+    display: none;
+  }
 
+  .theme-dark .decorative-element {
+    display: flex;
+  }
 } 
